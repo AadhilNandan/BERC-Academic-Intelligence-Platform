@@ -1,0 +1,190 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@layer base {
+  :root {
+    /* BERC Institutional Color System */
+    --background: 220 20% 97%;
+    --foreground: 224 40% 12%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 224 40% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 224 40% 12%;
+
+    /* Deep indigo primary */
+    --primary: 231 60% 28%;
+    --primary-foreground: 210 40% 98%;
+
+    /* Accent blue */
+    --accent-blue: 217 91% 45%;
+    --accent-blue-foreground: 0 0% 100%;
+
+    /* Subtle secondary */
+    --secondary: 220 14% 92%;
+    --secondary-foreground: 224 40% 12%;
+
+    --muted: 220 14% 93%;
+    --muted-foreground: 220 14% 46%;
+
+    --accent: 217 60% 94%;
+    --accent-foreground: 231 60% 28%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Status colors */
+    --status-stable: 142 60% 36%;
+    --status-stable-bg: 142 50% 94%;
+    --status-intervention: 25 95% 50%;
+    --status-intervention-bg: 25 100% 94%;
+    --status-advanced: 231 60% 28%;
+    --status-advanced-bg: 217 60% 94%;
+    --status-risk: 0 72% 51%;
+    --status-risk-bg: 0 72% 95%;
+
+    /* Tier colors */
+    --tier-bronze: 28 60% 45%;
+    --tier-silver: 220 10% 55%;
+    --tier-gold: 42 90% 50%;
+    --tier-expert: 270 60% 45%;
+
+    --border: 220 14% 87%;
+    --input: 220 14% 87%;
+    --ring: 231 60% 28%;
+
+    --radius: 0.5rem;
+
+    /* Shadows */
+    --shadow-card: 0 1px 4px 0 hsl(224 40% 12% / 0.07), 0 2px 12px 0 hsl(224 40% 12% / 0.04);
+    --shadow-elevated: 0 4px 20px 0 hsl(224 40% 12% / 0.10), 0 1px 4px 0 hsl(224 40% 12% / 0.06);
+    --shadow-header: 0 1px 0 0 hsl(220 14% 87%);
+
+    --sidebar-background: 231 45% 18%;
+    --sidebar-foreground: 210 40% 90%;
+    --sidebar-primary: 217 91% 60%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 231 45% 24%;
+    --sidebar-accent-foreground: 210 40% 96%;
+    --sidebar-border: 231 40% 24%;
+    --sidebar-ring: 217 91% 60%;
+  }
+
+  .dark {
+    --background: 224 30% 9%;
+    --foreground: 210 40% 95%;
+
+    --card: 224 25% 13%;
+    --card-foreground: 210 40% 95%;
+
+    --popover: 224 25% 13%;
+    --popover-foreground: 210 40% 95%;
+
+    --primary: 217 91% 60%;
+    --primary-foreground: 224 30% 9%;
+
+    --secondary: 224 20% 18%;
+    --secondary-foreground: 210 40% 95%;
+
+    --muted: 224 20% 18%;
+    --muted-foreground: 215 20% 60%;
+
+    --accent: 224 20% 20%;
+    --accent-foreground: 217 91% 70%;
+
+    --destructive: 0 62% 40%;
+    --destructive-foreground: 210 40% 98%;
+
+    --status-stable: 142 60% 45%;
+    --status-stable-bg: 142 40% 12%;
+    --status-intervention: 25 90% 55%;
+    --status-intervention-bg: 25 80% 12%;
+    --status-advanced: 217 91% 60%;
+    --status-advanced-bg: 217 50% 15%;
+    --status-risk: 0 62% 50%;
+    --status-risk-bg: 0 50% 12%;
+
+    --border: 224 20% 20%;
+    --input: 224 20% 20%;
+    --ring: 217 91% 60%;
+
+    --shadow-card: 0 1px 4px 0 hsl(0 0% 0% / 0.3), 0 2px 12px 0 hsl(0 0% 0% / 0.2);
+    --shadow-elevated: 0 4px 20px 0 hsl(0 0% 0% / 0.4), 0 1px 4px 0 hsl(0 0% 0% / 0.3);
+
+    --sidebar-background: 224 35% 7%;
+    --sidebar-foreground: 210 40% 85%;
+    --sidebar-primary: 217 91% 60%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 224 30% 13%;
+    --sidebar-accent-foreground: 210 40% 90%;
+    --sidebar-border: 224 25% 14%;
+    --sidebar-ring: 217 91% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-feature-settings: "cv11", "ss01";
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+@layer utilities {
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+  .shadow-elevated {
+    box-shadow: var(--shadow-elevated);
+  }
+  .shadow-header {
+    box-shadow: var(--shadow-header);
+  }
+
+  .status-stable {
+    color: hsl(var(--status-stable));
+    background-color: hsl(var(--status-stable-bg));
+  }
+  .status-intervention {
+    color: hsl(var(--status-intervention));
+    background-color: hsl(var(--status-intervention-bg));
+  }
+  .status-advanced {
+    color: hsl(var(--status-advanced));
+    background-color: hsl(var(--status-advanced-bg));
+  }
+  .status-risk {
+    color: hsl(var(--status-risk));
+    background-color: hsl(var(--status-risk-bg));
+  }
+
+  .tier-bronze { color: hsl(var(--tier-bronze)); }
+  .tier-silver { color: hsl(var(--tier-silver)); }
+  .tier-gold   { color: hsl(var(--tier-gold)); }
+  .tier-expert { color: hsl(var(--tier-expert)); }
+
+  .text-accent-blue { color: hsl(var(--accent-blue)); }
+  .bg-accent-blue   { background-color: hsl(var(--accent-blue)); }
+
+  .print-report {
+    @apply bg-white text-black;
+  }
+
+  @media print {
+    .no-print   { display: none !important; }
+    .print-only { display: block !important; }
+  }
+}
